@@ -19,7 +19,8 @@ with open("txt_for_task_6.txt", encoding="utf-8") as file_obj:
         hour_sum = 0
         value_list = value.split()
         for i in value_list:
-            num = int(i.split("(")[0])
-            hour_sum += num
+            if i != '-':
+                num = int(i.split("(")[0])
+                hour_sum += num
         my_dict.update({key: hour_sum})
     print(my_dict)

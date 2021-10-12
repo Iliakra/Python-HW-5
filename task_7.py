@@ -24,7 +24,7 @@ result_list = []
 profit_dict = {el.split()[0]: int(el.split()[2])-int(el.split()[3]) for el in content if int(el.split()[2]) > int(el.split()[3])}
 average_profit_dict = {"average_profit": sum(profit_dict.values()) / len(profit_dict.values())}
 loss = {el.split()[0]: int(el.split()[2])-int(el.split()[3]) for el in content if int(el.split()[2]) <= int(el.split()[3])}
-average_profit_dict.update(loss)
+profit_dict.update(loss)
 result_list.append(profit_dict)
 result_list.append(average_profit_dict)
 print(result_list)
